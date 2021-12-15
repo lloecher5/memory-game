@@ -9,8 +9,14 @@ function App() {
         <h3 class="subtitle">Match cards to win!</h3>
       </header>
       <div>
+        <MemoryCard isFlipped={true} symbol="Ø" />
         <MemoryCard />
         <MemoryCard />
+        <MemoryCard />
+      </div>
+      <div>
+        <MemoryCard />
+        <MemoryCard isFlipped={true} symbol={"∆"} />
         <MemoryCard />
         <MemoryCard />
       </div>
@@ -18,17 +24,11 @@ function App() {
         <MemoryCard />
         <MemoryCard />
         <MemoryCard />
-        <MemoryCard />
+        <MemoryCard isFlipped={true} symbol="∆" />
       </div>
       <div>
         <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
-        <MemoryCard />
-      </div>
-      <div>
-        <MemoryCard />
-        <MemoryCard />
+        <MemoryCard isFlipped={true} symbol="Ø" />
         <MemoryCard />
         <MemoryCard />
       </div>
