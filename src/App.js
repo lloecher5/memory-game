@@ -33,7 +33,9 @@ function App() {
   const cardsJSX = deck.map((card, index) => {
     return (
       <MemoryCard
-        clickHandler={() => pickCard(index)}
+        clickHandler={() => {
+          pickCard(index);
+        }}
         isFlipped={card.isFlipped}
         symbol={card.symbol}
         key={index}
@@ -71,12 +73,21 @@ function App() {
         unflipCards(card1Index, card2Index);
       }
     }
+
     setDeck(newDeck);
   };
 
   const handleClick = () => {
     setDeck(generateDeck());
+
+    setCount(0);
   };
+
+  const counter = () => {
+    setCount(count + 1);
+  };
+
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -84,12 +95,15 @@ function App() {
         <h1>Memory Game</h1>
         <h3 className="subtitle">Match cards to win!</h3>
       </header>
-      <div>{cardsJSX.slice(0, 4)}</div>
-      <div>{cardsJSX.slice(4, 8)}</div>
-      <div>{cardsJSX.slice(8, 12)}</div>
-      <div>{cardsJSX.slice(12, 16)}</div>
+      <div onClick={counter}>
+        <div>{cardsJSX.slice(0, 4)}</div>
+        <div>{cardsJSX.slice(4, 8)}</div>
+        <div>{cardsJSX.slice(8, 12)}</div>
+        <div>{cardsJSX.slice(12, 16)}</div>
+      </div>
 
       <button onClick={handleClick}>Reset</button>
+      <p>Count: {count} </p>
     </div>
   );
 }
