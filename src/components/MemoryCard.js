@@ -5,7 +5,7 @@ const MemoryCard = (props) => {
   const innerClass = "MemoryCard__inner";
 
   return (
-    <div className="MemoryCard">
+    <div className="MemoryCard" onClick={props.clickHandler}>
       <div className={props.isFlipped ? innerClass + " flipped" : innerClass}>
         <div className="MemoryCard__back">
           <img
